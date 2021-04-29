@@ -1,0 +1,31 @@
+After completing the assignment, be sure to push to Github. You do not have to worry about pushing to Heroku this lesson.
+Please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your source code repository (e.g., GitHub):
+	https://github.com/hig19011/cse341-nodejs
+
+3. Briefly list and describe the elements of the application that are functioning. 
+	There are three routes added per instructions.
+		1.	The base route '/' displays the default page to take a new user name.
+		2.	The '/create-user' route prints the submitted user name to the console and adds the name to the user list.
+		3.	The '/users' route which displays all of the known users
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+	None – all are working
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+	Understanding how to set up the hot reload was the most helpful thing I learned about this week. The assignment itself was already done while working through the week's reading material.
+
+6. If you could change this assignment to be more effective or helpful, what would you change?
+	Review everything to do with Git instructions, update where needed.  I ran into two issues.  The first and by far the worst was the change in Git from labeling the primary branch from 'master' to 'main'.  Git automatically creates the repo with 'main' branch today, but almost all of the tools are still geared to use the 'master' as the label for the primary branch.  A lot of time was lost to the confusion this made and the research needed to make things right.  Second and much less significant, the directions for where to put the Prove01 assignment could be clearer.  It said to add it to the team activity code, but that exists in a different repository, per instructions in the team activity.  I ended up copying the team activity code over to a Prove01 folder and adding the work for the assignment.
+
+7. Please select the category you feel best describes your assignment:
+   1 - Some attempt was made
+   2 - Developing, but significantly deficient
+   3 - Slightly deficient, but still mostly adequate
+   4 - Meets requirements
+   5 - Shows creativity and excels above and beyond requirements
+	Category 5
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+	I updated the user list when a new user was submitted, which was the specific requirement for "Above and Beyond" this week. I also completed the rest of the requirements.
