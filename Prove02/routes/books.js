@@ -6,7 +6,8 @@ let books = [];
 router.get('/', (req, res, next)=>{
   res.render('book-list', {
     pageTitle: 'Book List',
-    path: '/'
+    path: '/',
+    books: books
   });
 });
 
@@ -18,9 +19,14 @@ router.get('/add-book', (req,res,next) => {
 });
 
 router.post('/add-book',(req, res, next)=>{
-  var book = {title: req.body.name, description: req.body.description };
+  var book = { 
+    title: req.body.title, 
+    description: req.body.description,
+    author: req.body.author,
+    publishedOn: req.body.publishedOn
+  };
   books.push(book);
-  res.redirect('/', 302);
+  res.redirect(302,'/');
 });
 
 
