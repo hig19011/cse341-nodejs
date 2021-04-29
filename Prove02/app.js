@@ -1,3 +1,5 @@
+var PORT = process.env.PORT || 3000;
+
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -14,4 +16,4 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bookRoutes);
 
-app.listen(3000);
+app.listen(PORT);

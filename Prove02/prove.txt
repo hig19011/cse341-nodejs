@@ -1,0 +1,26 @@
+After completing the assignment, be sure to push to Github and Heroku.
+Please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application (e.g., Heroku):
+  https://cs341-gh-prove01.herokuapp.com/
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+  https://github.com/hig19011/cse341-nodejs
+3. Briefly list and describe the elements of the application that are functioning. 
+  There is a nav bar that links to a book listing page and a book entry page.
+  The book-entry page takes a Title, Description, Author, and Year fields via a form.  This form can take repeated entries, and they are added to the list.
+  The book listing pages list any entered books and their fields.
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+  None, all pieces are working.
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+  Learning to use Heroku was interesting.  It was a straightforward process to get an app online.
+6. If you could change this assignment to be more effective or helpful, what would you change?
+  Remove the first video called "Heroku Setup," it caused more confusion than it does to help. The second video, "Deploy your first App with Heroku and NodeJS," combined with the Heroku docs were very useful.
+7. Please select the category you feel best describes your assignment:
+   1 - Some attempt was made
+   2 - Developing but significantly deficient
+   3 - Slightly deficient, but still mostly adequate
+   4 - Meets requirements
+   5 - Shows creativity and excels above and beyond requirements
+  Category 5.
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+  I met all of the category 4 requirements.  My site looks good, takes extra fields, makes significant use of EJS, and accepts multiple book entries. Added minor client-side validation for required fields.
