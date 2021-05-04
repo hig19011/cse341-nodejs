@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #364652;  
+  box-shadow: 0 5px 5px 0 lightgray;
+  padding: 24px;
+}
+
+
+
+header nav ul {
+  list-style-type: none;
+  display: flex;  
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+
+}
+
+header nav ul li{
+  margin: 0 16px;
+ 
+}
+
+header nav ul li a {
+  text-decoration: none;
+  font-size: 20px;
+  padding: 24px;
+  color:#BFB1C1;
+}
+
+header nav ul li a:hover {
+ background-color:#071108;
+}
+
+h1 {
+  text-align: center;
+  color: #071108;
+}
+
+
+.book-list-empty {
+  text-align: center;
+}
+.book-list {
+  padding: 0;
+  margin: 0 auto;
+  max-width: 90%;
+
+}
+
+.book-list li {
+  display: grid;  
+  grid-template-columns: auto 1fr;
+  padding: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 5px 5px lightgray; 
+  column-gap: 8px; 
+}
+
+.book-list .book-list__label {
+  text-align: right;
+  font-weight: bold;
+}
+
+form {
+  margin: 0 auto;  
+  width: 300px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+form input {
+  display: block;
+  margin-bottom: 12px;
+  width: 90%;
+}
+
+form textarea {
+  display: block;
+  margin-bottom: 12px;
+  width: 90%;
+  height: 4em;
+}
+
+form button {
+  border: #071108 solid 1px;
+  background-color: #B5BEC6;
+  padding: 12px;
+  font-size: 16px;
+}
+
+
+form button:hover {
+  background-color: #C7DBE6;  
+}
+
+:required:valid {
+  border: 2px solid green;  
+}
