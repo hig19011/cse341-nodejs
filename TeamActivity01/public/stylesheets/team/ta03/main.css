@@ -1,0 +1,17 @@
+.ta03-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ta03-list li {
+  padding: 16px;
+  margin: 16px;
+  box-shadow: 3px 3px 5px 5px lightgray;
+
+}
+
+.ta03-list .price {
+  font-weight: bold;
+  font-size: 22px;
+}

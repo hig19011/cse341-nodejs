@@ -2,6 +2,7 @@
 <html>
 <head>
   <% include ../../includes/header.ejs %>
+  <link rel="stylesheet" href="/stylesheets/team/ta03/main.css">
 </head>
 
 <body>
@@ -13,7 +14,28 @@
   </div>
 </div>
 <div class="container">
-  
+  <form action="/team/ta03/" method="POST">
+    <label for="keyword">Search</label>
+    <input type="text" id="keyword" name="keyword">
+    <button type="submit">Filter</button>
+  </form>
+  <ul class="ta03-list">
+    <% if(data.length > 0) { %>
+    
+      <% for(let d of data) { %> 
+        <li>
+          <h2><%= d.name %></h2>
+          <img src="<%= d.imageUrl %>" alt="<%= d.name %>">
+          <p class="price">$<%= d.price %></p>
+          <p>Description: <%= d.description %></p>
+          <span>Tags: <%= d.tags.join(', ') %></span>
+
+        </li>  
+      <% }%>
+    <% } else { %>
+      <p>No matches found.</p>
+    <% }%>
+  </ul>
 </div>
 
 
