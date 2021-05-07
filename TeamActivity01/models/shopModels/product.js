@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
-const dirName = require('../util/path');
-const Cart = require('../models/cart');
+const dirName = require('../../util/path');
+const Cart = require('../../models/shopModels/cart');
 
-const p = path.join(dirName, 'data', 'products.json');
+const p = path.join(dirName, 'data', 'shop', 'products.json');
 
 const getProductsFromFile = (cb) => {
   fs.readFile(p, (err, fileContents) => {
