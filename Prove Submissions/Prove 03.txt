@@ -1,0 +1,35 @@
+After completing the assignment, be sure to push to Github and Heroku.
+Please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application (e.g., Heroku):
+	https://dashboard.heroku.com/apps/cse341-gh-site/deploy/heroku-git
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+	https://github.com/hig19011/cse341-nodejs
+	Note: I have combined all the proves and other assignments under the folder called "Site."
+
+3. Briefly list and describe the elements of the application that are functioning. 
+	The shop page is essentially a placeholder for a home page but is functional.  The Products page allows you to see product details and add a product to the cart.  The Product Detail page shows a single product and adds some additional data about the product. The Cart page allows you to remove items from the cart but only indicates the name at the moment.  The Add Product page allows the addition of a product into the system.  The Admin Products page will let you delete a product from the system, including open carts.  It also links to an Edit Product page that allows you to edit all details about a product.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+	None, all parts of the assignment are working.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+	For better or worse, the coolest part of the week was a renewed appreciation for the clean and straightforward web development that can be done in ASP.Net Core and related technologies.  
+
+	I am glad I am learning NodeJS in the event that it becomes required for some project, but I won't recommend it at work. Heroku is pretty cool for quickly getting NodeJS sites up and running.
+
+6. If you could change this assignment to be more effective or helpful, what would you change?
+	The assignment was pretty straightforward once I understood the directions.  The assignment/project directions need to be more explicit and less implicit.  I read two sets of instructions (Prove 3 assignment, Project 1 description), and I still didn't understand what was to be done or where we would work. It took watching the TA video before it was apparent that we were supposed to take the Training Video app and adapted it to our e-commerce store for Project 1.  That tells me that the prior documentation was too vague.
+
+7. Please select the category you feel best describes your assignment:
+   1 - Some attempt was made
+   2 - Developing, but significantly deficient
+   3 - Slightly deficient, but still mostly adequate
+   4 - Meets requirements
+   5 - Shows creativity and excels above and beyond requirements
+	
+	Category 5
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+	The MVC structure and a couple of dynamic routes are in place.  I have 12 products and multiple items in the shopping carts with additional details beyond the teaching videos, which should satisfy all the category 5 requirements.
