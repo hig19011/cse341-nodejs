@@ -7,8 +7,12 @@
 
 .product-item {
     width: 20rem;
-    max-width: 95%;
+    max-width: 90%;
     margin: 1rem;
+}
+
+.product-details {
+    max-width: 400px;
 }
 
 .product__title {
@@ -23,5 +27,11 @@
 }
 
 .product__description {
-    text-align: center;
+    text-align: left;
+    font-weight:bolder;
+}
+
+.product__stat {
+    text-align: left;
+    color: #440000;
 }

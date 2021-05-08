@@ -18,12 +18,10 @@
                                     <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
                                 </div>
                                 <div class="card__content">
-                                    <h2 class="product__price">$
-                                        <%= product.price %>
-                                    </h2>
-                                    <p class="product__description">
-                                        <%= product.description %>
-                                    </p>
+                                    <h2 class="product__price">$<%= product.price %></h2>
+                                    <p class="product__description"><%= product.description %></p>
+                                    <p class="product__stat"><%= product.height %> x <%= product.width %> x <%= product.depth %> inches</p>                                    
+                                    <p class="product__stat"><%= product.weight %> ounces</p>
                                 </div>
                                 <div class="card__actions">
                                     <a href="/shop/admin/edit-product/<%= product.id %>?edit=true" class="btn">Edit</a>

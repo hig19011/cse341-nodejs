@@ -24,6 +24,23 @@
                 <label for="description">Description</label>
                 <textarea name="description" id="description" rows="5"><% if (editing) { %><%= product.description %><% } %></textarea>
             </div>
+            <div class="form-control">
+                <label for="height">Height (inches)</label>
+                <input type="number" name="height" id="height" step=".25" value="<% if (editing) { %><%= product.height %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="width">Width (inches)</label>
+                <input type="number" name="width" id="width" step=".25" value="<% if (editing) { %><%= product.width %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="depth">Depth (inches)</label>
+                <input type="number" name="depth" id="depth" step=".25" value="<% if (editing) { %><%= product.depth %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="weight">Weight (ounces)</label>
+                <input type="number" name="weight" id="weight" step=".1" value="<% if (editing) { %><%= product.weight %><% } %>">
+            </div>
+            
             <% if(editing) { %>
                 <input type="hidden" value="<%= product.id %>" name="productId">
             <% } %>
