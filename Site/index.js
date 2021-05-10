@@ -23,5 +23,6 @@ app.use(express.static(path.join(__dirname, 'public')))
    .set('views', path.join(__dirname, 'views'))
    .set('view engine', 'ejs')
    .use(bodyParser({extended: false})) // For parsing the body of a POST
+   //.use(express.json({extended:false}))
    .use('/', routes)   
    .listen(PORT, () => console.log(`Listening on ${ PORT }`));

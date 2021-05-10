@@ -22,17 +22,32 @@ exports.postAddProduct = (req, res, next) => {
   const depth = req.body.depth;
   const weight = req.body.weight;
 
-  const product = new Product(null, title, imageUrl, description, price, height, width, depth, weight, req.user._id);
-  product.save().then(result => {
-    console.log('Created Product')
-    res.redirect('/shop/admin/products');
-  });
+  //console.log(req);
+
+  const product = new Product({ 
+    title: title, 
+    imageUrl: imageUrl, 
+    description: description, 
+    price: price,
+    height: height,
+    width: width,
+    depth: depth,
+    weight: weight,
+    userId: req.user
+   });
+  product.save()
+    .then(result => {
+      console.log('Created Product')
+      res.redirect('/shop/admin/products');
+    });
 
 };
 
 exports.getProducts = (req, res, next) => {
-  Product.fetchAll()
+  Product.find()
+    //.populate('userId')
     .then(products => {
+      console.log(products);
       res.render('pages/shop/admin/products', {
         prods: products,
         pageTitle: 'Shop',
@@ -70,34 +85,35 @@ exports.postEditProduct = (req, res, next) => {
   const updatedImageUrl = req.body.imageUrl;
   const updatedPrice = req.body.price;
   const updatedDesc = req.body.description;
-  const updateHeight = req.body.height;
-  const updateWidth = req.body.width;
-  const updateDepth = req.body.depth;
-  const updateWeight = req.body.weight;
+  const updatedHeight = req.body.height;
+  const updatedWidth = req.body.width;
+  const updatedDepth = req.body.depth;
+  const updatedWeight = req.body.weight;
 
-  const updatedProduct = new Product(new ObjectId(prodId), updatedTitle, updatedImageUrl, updatedDesc, updatedPrice, updateHeight, updateWidth, updateDepth, updateWeight);
-  updatedProduct.save()
+  Product.findById(prodId).then(product => {
+    product.title = updatedTitle;
+    product.price = updatedPrice;
+    product.description = updatedDesc;
+    product.imageUrl = updatedImageUrl;
+    product.height = updatedHeight;
+    product.width = updatedWidth;
+    product.depth = updatedDepth;
+    product.weight = updatedWeight;
+    return product.save();
+  })
     .then(result => {
       console.log('UPDATED PRODUCT!');
-      res.redirect('/shop/admin/products');      
+      res.redirect('/shop/admin/products');
     })
-    .catch(err => console.log(err));  
+    .catch(err => console.log(err));
 };
 
 exports.postDeleteProduct = (req, res, next) => {
-  const prodId = req.body.productId;  
-  Product.deleteById(prodId)
-  .then(()=> {
-    console.log('DESTROYED PRODUCT')
-    res.redirect('/pages/shop/admin/products');
-  })
-  .catch(err => console.log(err));
+  const prodId = req.body.productId;
+  Product.findByIdAndRemove(prodId)
+    .then(() => {
+      console.log('DESTROYED PRODUCT')
+      res.redirect('shop/admin/products');
+    })
+    .catch(err => console.log(err));
 }
-
-
-
-// exports.postDeleteProduct = (req, res, next) => {
-//   const prodId = req.body.productId;  
-//   Product.deleteById(prodId);
-//   res.redirect('pages/shop/admin/products');
-// }
