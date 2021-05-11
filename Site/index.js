@@ -15,14 +15,45 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const routes = require("./routes");
+const mongoose = require('mongoose');
+const cors = require('cors') // Place this with other requires (like 'path' and 'express')
+
+const corsOptions = {
+   origin: "https://cse341-gh-site.herokuapp.com/",
+   optionsSuccessStatus: 200
+};
+
+const options = {
+   useUnifiedTopology: true,
+   useNewUrlParser: true,
+   useCreateIndex: true,
+   useFindAndModify: false,
+   family: 4
+};
+
 const PORT = process.env.PORT || 5000 // So we can run on heroku || (OR) localhost:5000
+const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://gene:cit341@cluster0.okvaf.mongodb.net/Shop?retryWrites=true&w=majority";
+
 
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'public')))
    .set('views', path.join(__dirname, 'views'))
    .set('view engine', 'ejs')
+   .use(cors(corsOptions))
    .use(bodyParser({extended: false})) // For parsing the body of a POST
    //.use(express.json({extended:false}))
-   .use('/', routes)   
-   .listen(PORT, () => console.log(`Listening on ${ PORT }`));
+   .use('/', routes);
+   
+mongoose
+   .connect(
+     MONGODB_URL, options
+   )
+   .then(result => {
+     console.log("Connected:");
+     app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
+   })
+   .catch(err => {
+     console.log(err);
+   });
+
