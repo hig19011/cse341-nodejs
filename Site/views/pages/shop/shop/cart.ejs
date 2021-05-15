@@ -5,22 +5,29 @@
 <body>
     <%- include('../includes/navigation.ejs') %>
     <main>
-        <% if(products.length > 0) { %>
+        <% if(products.length > 0) { 
+            var total = 0;    
+        %>
             <ul class="cart__item-list">
                 <% products.forEach(p => { %>
                     <li class="cart__item">
                         <h1><%= p.productId.title %></h1>
+                        <img src="<%= p.productId.imageUrl %>">
                         <h2>Quantity: <%= p.quantity %></h2>
+                        <h2>Price: $<%= p.productId.price %></h2>
                         <form action="/shop/cart-delete-item" method="POST">
                             <input type="hidden" value="<%= p.productId._id %>" name="productId" >
                             <button class="btn danger" type="submit">Delete</button>
                         </form>
                     </li>
-                <% }) %>
+                <% 
+                    total += p.quantity * p.productId.price
+                }) %>
             </ul>
             <hr>
             <div class="centered">
                 <form action="/shop/create-order" method="POST">
+                    <h2>Total Price: $<%= total.toFixed(2) %></h2>
                     <button type="submit" class="btn">Order Now!</button>
                 </form>
             </div>

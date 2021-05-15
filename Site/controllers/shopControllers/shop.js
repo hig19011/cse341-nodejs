@@ -96,19 +96,23 @@ exports.postOrder = (req, res, next) => {
       const products = user.cart.items.map(i => {
         return { quantity: i.quantity, product: { ...i.productId._doc } };
       });
+
+      var total = 0;
+      products.forEach(x => total = total + (x.quantity * x.product.price))
       const order = new Order({
         user: {
           name: req.user.name,
           userId: req.user
-        },
-        products: products
+        },        
+        products: products,
+        totalCost: total.toFixed(2)
       });
       order.save();
     })
     .then(result => {
       return req.user.clearCart();
     }).then(() => {
-      res.redirect('pages/shop/shop/orders');
+      res.redirect('/shop/orders');
     })
     .catch(err => console.log(err));
 }
