@@ -1,0 +1,40 @@
+After completing the assignment, be sure to push to Github and Heroku.
+Please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application (e.g., Heroku):
+  https://cse341-gh-site.herokuapp.com
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+  https://github.com/hig19011/cse341-nodejs
+
+3. Briefly list and describe the elements of the application that are functioning. 
+  The Shop page displays Products with working Add to Cart button.
+  The Products page display Products with working Details and Add to Cart button.
+  The Product Details page shows all details about a product and has working Add to Cart button
+  The Cart page display items in the cart for a user and allows the placement of an order.
+  The Order page display order made by a user.
+  The Add/Edit Product page allows creating or altering of new products into the database, including the user who created them.
+  The Admin Products page display all products with working Edit and Delete buttons.  
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+  None, all pieces of the assignment are working.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+  The Mongoose library did a lot to improve the ease of working with MongoDb.  The ability to make our data objects strongly type, or at least close to it, was a nice addition.
+
+6. If you could change this assignment to be more effective or helpful, what would you change?
+  Clarity in the requirements.  I had similar issues last week.  Students shouldn't have to guess which collections are required for a specific grade.  The documentation is lacking and written from the perspective of someone who has completed the course, not someone who is exploring the course for the first time.  It also isn't reflective of expectations of requirements in a real-world scenario, which as a final course for at least one Bachelor's degree it should reflect.
+  
+  I will continue to ask questions as the documentation continues to be vague.  Please know that this isn’t a personal attack; I know neither the instructor nor the teaching assistant is responsible for the state of the documentation.   I only want to be sure I know what I need to do for the assignment.  Thank you for your patience with me.
+
+
+7. Please select the category you feel best describes your assignment:
+   1 - Some attempt was made
+   2 - Developing, but significantly deficient
+   3 - Slightly deficient, but still mostly adequate
+   4 - Meets requirements
+   5 - Shows creativity and excels above and beyond requirements
+    Category 5
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+  I have all of the needed collections plus non-required collection created and used, per the the clarification and exception on the Orders collection on Saturday from Brother Lyon.  My operations are user specific including product creation, user cart and order recorded with user info.  The cart does full CRUD operations and creates Orders.
