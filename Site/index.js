@@ -18,6 +18,8 @@ const routes = require("./routes");
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoDbStore = require('connect-mongodb-session')(session);
+const csrf = require('csurf');
+const flash = require('connect-flash');
 const cors = require('cors'); // Place this with other requires (like 'path' and 'express')
 const User = require('./models/shopModels/user');
 
@@ -40,6 +42,7 @@ const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://gene:cit341@cluste
 
 const app = express();
 const store = new MongoDbStore({ uri: MONGODB_URL, collections: 'sessions' });
+const csrfProtection = csrf();
 
 app.use(express.static(path.join(__dirname, 'public')))
    .set('views', path.join(__dirname, 'views'))
@@ -48,6 +51,8 @@ app.use(express.static(path.join(__dirname, 'public')))
    .use(bodyParser({ extended: false })) // For parsing the body of a POST
    //.use(express.json({extended:false}))
    .use(session({ secret: 'Blue Licorice', resave: false, saveUninitialized: false, store: store }))
+   .use(csrfProtection)
+   .use(flash())
    .use((req, res, next) => {
       if (!req.session.user) {
          return next();

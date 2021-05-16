@@ -1,6 +1,11 @@
 const shopRoutes = require('express').Router();
 
 shopRoutes
+   .use((req, res, next) => {
+      res.locals.isAuthenticated = req.session.isLoggedIn;
+      res.locals.csrfToken = req.csrfToken();
+      next();
+   })
    .use('/', require('./shop'))
    .use('/admin', require('./admin'))
    .use('/auth', require('./auth'))
