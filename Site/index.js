@@ -16,7 +16,10 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const routes = require("./routes");
 const mongoose = require('mongoose');
-const cors = require('cors') // Place this with other requires (like 'path' and 'express')
+const session = require('express-session');
+const MongoDbStore = require('connect-mongodb-session')(session);
+const cors = require('cors'); // Place this with other requires (like 'path' and 'express')
+const User = require('./models/shopModels/user');
 
 const corsOptions = {
    origin: "https://cse341-gh-site.herokuapp.com/",
@@ -36,24 +39,35 @@ const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://gene:cit341@cluste
 
 
 const app = express();
+const store = new MongoDbStore({ uri: MONGODB_URL, collections: 'sessions' });
 
 app.use(express.static(path.join(__dirname, 'public')))
    .set('views', path.join(__dirname, 'views'))
    .set('view engine', 'ejs')
    .use(cors(corsOptions))
-   .use(bodyParser({extended: false})) // For parsing the body of a POST
+   .use(bodyParser({ extended: false })) // For parsing the body of a POST
    //.use(express.json({extended:false}))
+   .use(session({ secret: 'Blue Licorice', resave: false, saveUninitialized: false, store: store }))
+   .use((req, res, next) => {
+      if (!req.session.user) {
+         return next();
+      }
+      User.findById(req.session.user._id)
+         .then(user => {
+            req.user = user;
+            next();
+         })
+         .catch(err => console.log(err));      
+   })
    .use('/', routes);
-   
+
 mongoose
-   .connect(
-     MONGODB_URL, options
-   )
+   .connect(MONGODB_URL, options)
    .then(result => {
-     console.log("Connected:");
-     app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
+      console.log("Connected:");
+      app.listen(PORT, () => console.log(`Listening on ${PORT}`));
    })
    .catch(err => {
-     console.log(err);
+      console.log(err);
    });
 
