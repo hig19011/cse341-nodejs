@@ -2,11 +2,13 @@ const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
 const sendgridTransport = require('nodemailer-sendgrid-transport')
 
+
+
 const User = require('../../models/shopModels/user')
 
 const transporter = nodemailer.createTransport(sendgridTransport({
   auth: {   
-    api_key: "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"
+    api_key: process.env.SEND_GRID 
   }
 }));
 

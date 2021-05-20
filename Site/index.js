@@ -21,6 +21,7 @@ const MongoDbStore = require('connect-mongodb-session')(session);
 const csrf = require('csurf');
 const flash = require('connect-flash');
 const cors = require('cors'); // Place this with other requires (like 'path' and 'express')
+require('dotenv').config();
 const User = require('./models/shopModels/user');
 
 const corsOptions = {
@@ -37,7 +38,7 @@ const options = {
 };
 
 const PORT = process.env.PORT || 5000 // So we can run on heroku || (OR) localhost:5000
-const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://gene:cit341@cluster0.okvaf.mongodb.net/Shop?retryWrites=true&w=majority";
+const MONGODB_URL = process.env.MONGODB_URL;
 
 
 const app = express();
