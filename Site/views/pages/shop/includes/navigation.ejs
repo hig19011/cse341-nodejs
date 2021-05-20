@@ -55,13 +55,13 @@
     <li class="mobile-nav__item">
       <a class="<%= path === '/products' ? 'active' : '' %>" href="/shop/products">Products</a>
     </li>
+    <% if(isAuthenticated) { %>
     <li class="mobile-nav__item">
       <a class="<%= path === '/cart' ? 'active' : '' %>" href="/shop/cart">Cart</a>
     </li>
     <li class="mobile-nav__item">
       <a class="<%= path === '/orders' ? 'active' : '' %>" href="/shop/orders">Orders</a>
     </li>
-    <% if(isAuthenticated) { %>
     <li class="mobile-nav__item">
       <a class="<%= path === '/admin/add-product' ? 'active' : '' %>" href="/shop/admin/add-product">Add Product
       </a>
