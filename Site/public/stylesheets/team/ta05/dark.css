@@ -1,0 +1,9 @@
+html, body {
+  background-color: black;
+  color: white;
+}
+
+button {
+  background-color: white;
+  color: black;
+}

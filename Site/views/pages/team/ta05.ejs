@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../../includes/header.ejs %>
+  <link rel="stylesheet" href="/stylesheets/team/ta03/main.css">
+ 
+  <% if(theme == 'dark') { %>
+    <link rel="stylesheet" href="/stylesheets/team/ta05/dark.css">
+  <% } else { %>
+    <link rel="stylesheet" href="/stylesheets/team/ta05/light.css">
+  <% } %> 
+</head>
+
+<body>
+  <% include ../../includes/nav.ejs %>
+  <div class="jumbotron text-center">
+    <div class="container">
+      <h1><%= title %></h1>
+      <p>This is the placeholder for Team Activity 05</p>
+    </div>
+  </div>
+  <div class="container">
+    <form action="/team/ta05/change-style" method="POST">
+      <label for="keyword">Style</label>   
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <button type="submit">Switch Style</button>
+    </form>
+    <form action="/team/ta05/counter" method="POST">
+      <label for="keyword">Counter</label>
+      <span><%= counter %></span>
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">    
+      <button type="submit">Increment</button>
+    </form>
+    <form action="/team/ta05/reset" method="POST">
+      <label for="keyword">Reset session</label>
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">    
+      <button type="submit">Reset</button>
+    </form>
+  </div>
+
+
+</body>
+</html>

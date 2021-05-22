@@ -17,6 +17,7 @@
                         <h2>Price: $<%= p.productId.price %></h2>
                         <form action="/shop/cart-delete-item" method="POST">
                             <input type="hidden" value="<%= p.productId._id %>" name="productId" >
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                             <button class="btn danger" type="submit">Delete</button>
                         </form>
                     </li>
@@ -28,7 +29,8 @@
             <div class="centered">
                 <form action="/shop/create-order" method="POST">
                     <h2>Total Price: $<%= total.toFixed(2) %></h2>
-                    <button type="submit" class="btn">Order Now!</button>
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <button type="submit" class="btn">Order Now!</button>                    
                 </form>
             </div>
         <% } else { %>

@@ -9,7 +9,7 @@ const orderSchema = new Schema({
   }],
   totalCost: {type: Number, required: true },
   user: {
-    name: {
+    email: {
       type: String, 
       required: true
     },

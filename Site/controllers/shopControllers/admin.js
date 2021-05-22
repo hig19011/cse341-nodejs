@@ -113,7 +113,7 @@ exports.postDeleteProduct = (req, res, next) => {
   Product.findByIdAndRemove(prodId)
     .then(() => {
       console.log('DESTROYED PRODUCT')
-      res.redirect('shop/admin/products');
+      res.redirect('/shop/admin/products');
     })
     .catch(err => console.log(err));
 }

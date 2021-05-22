@@ -1,10 +1,11 @@
 const Product = require('../../models/shopModels/product');
+const User = require('../../models/shopModels/user');
 const Order = require('../../models/shopModels/order');
 const { getDb } = require('../../util/shop/database');
 
 exports.getProducts = (req, res, next) => {
   Product.find()
-    .then((products) => {
+    .then((products) => {      
       res.render('pages/shop/shop/product-list', {
         prods: products,
         pageTitle: 'Shop',
@@ -55,8 +56,7 @@ exports.getCart = (req, res, next) => {
 exports.postCart = (req, res, next) => {
   const prodId = req.body.productId;
   Product.findById(prodId)
-    .then(product => {
-      console.log(req.user);
+    .then(product => {      
       return req.user.addToCart(product);
     })
     .then(result => {
@@ -77,7 +77,7 @@ exports.postCartDeleteProduct = (req, res, next) => {
 }
 
 exports.getOrders = (req, res, next) => {
-  Order.find({ 'user.userId': req.user._id })
+  Order.find({ 'user.userId': req.session.user._id })
     .then(orders => {
       res.render('pages/shop/shop/orders', {
         pageTitle: 'Your Orders',
@@ -101,8 +101,8 @@ exports.postOrder = (req, res, next) => {
       products.forEach(x => total = total + (x.quantity * x.product.price))
       const order = new Order({
         user: {
-          name: req.user.name,
-          userId: req.user
+          email: req.session.user.email,
+          userId: req.session.user
         },        
         products: products,
         totalCost: total.toFixed(2)
