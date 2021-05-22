@@ -1,4 +1,3 @@
-
 After completing the assignment, be sure to push to Github and Heroku.
 Please answer the questions in this text file and submit it to I-Learn.
 
@@ -9,12 +8,25 @@ Please answer the questions in this text file and submit it to I-Learn.
   https://github.com/hig19011/cse341-nodejs
 
 3. Briefly list and describe the elements of the application that are functioning. 
-  
+  The Shop page displays Products with working Add to Cart button.  
+  The Products page display Products with working Details and Add to Cart button.
+  The Product Details page shows all details about a product and has working Add to Cart button
+  The Cart page display items in the cart for a user and allows the placement of an order.
+  The Order page display order made by a user.
+  The Add/Edit Product page allows creating or altering of new products into the database, including the user who created them.
+  The Admin Products page display all products with working Edit and Delete buttons.  
+  The Signup page allow a user to register with the site.
+  The Login page allows a user to login to the site.
+  The Logout button will log a user out of the site.
+
 4. Briefly describe any pieces of the assignment that are not yet working correctly.
+  None, all pieces of the assignment are working.
 
 5. Briefly describe the "coolest" thing you learned while completing this assignment.
+  The use of middleware was the most valuable thing about this assignment. It vastly simplified including variable needed on each page by not needing to have them listed with every render function.
 
 6. If you could change this assignment to be more effective or helpful, what would you change?
+  The project description that we are building towards is vague with respect to timelines.  Sometimes it's hard to know if we have covered certain features needed for the end project or wait because it's coming in a future week.  For example, we have created a 404 page already via the video course, but not the 500.  It's hard for me to know if I should try to handle the 500 now or wait for it in a future week.  If I wait, I might have a ton of stuff to do in week 6. It's frustrating at times.
 
 7. Please select the category you feel best describes your assignment:
    1 - Some attempt was made
@@ -22,5 +34,7 @@ Please answer the questions in this text file and submit it to I-Learn.
    3 - Slightly deficient, but still mostly adequate
    4 - Meets requirements
    5 - Shows creativity and excels above and beyond requirements
+    Category 5
 
 8. Provide a brief justification (1-2 sentences) for selecting that category.
+  My authentication works with error messages that protect routes and change views. The CSFR protection is in all forms. During signup, I request the user's first name, last name, and phone number. The first name is used in the nav to let the user know who they have logged in as.
