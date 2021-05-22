@@ -36,6 +36,9 @@
         <a class="<%= path === '/signup' ? 'active' : '' %>" href="/shop/auth/signup">Signup</a>
       </li>
       <% } else { %>
+        <li class="main-header__item">
+          <h4>Welcome <%= userName %></h4>
+        </li>
       <li class="main-header__item">
         <form action="/shop/auth/logout" method="POST">
           <input type="hidden" name="_csrf" value="<%= csrfToken %>">
@@ -49,6 +52,11 @@
 
 <nav class="mobile-nav">
   <ul class="mobile-nav__item-list">
+    <% if(isAuthenticated) { %>
+      <li class="mobile-nav__item">
+        <h2>Welcome <%= userName%></h2>
+      </li>
+    <% } %>
     <li class="mobile-nav__item">
       <a class="<%= path === '/' ? 'active' : '' %>" href="/shop/">Shop</a>
     </li>
@@ -78,7 +86,7 @@
     <li class="mobile-nav__item">
       <a class="<%= path === '/singup' ? 'active' : '' %>" href="/shop/auth/signup">Signup</a>
     </li>
-    <% } else { %>
+    <% } else { %>    
     <li class="mobile-nav__item">
       <form action="/shop/auth/logout" method="POST">
         <input type="hidden" name="_csrf" value="<%= csrfToken %>">

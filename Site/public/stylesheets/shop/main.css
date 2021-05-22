@@ -61,6 +61,12 @@ form {
   padding: 0;
 }
 
+.main-header__item h4 {
+  color: #01BAEF;
+  margin: 0;
+  padding: 1px 0;
+}
+
 .main-header__item a,
 .main-header__item button {
   font: inherit;
@@ -109,16 +115,23 @@ form {
   padding: 0;
 }
 
-.mobile-nav__item a {
+.mobile-nav__item a,
+.mobile-nav__item button {
   text-decoration: none;
   color: black;
   font-size: 1.5rem;
   padding: 0.5rem 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .mobile-nav__item a:active,
 .mobile-nav__item a:hover,
-.mobile-nav__item a.active {
+.mobile-nav__item a.active,
+.mobile-nav__item button:active,
+.mobile-nav__item button:hover,
+.mobile-nav__item button.active {
   background: #0B4F6C;
   color: white;
   border-radius: 3px;

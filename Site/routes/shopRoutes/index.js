@@ -4,6 +4,9 @@ shopRoutes
    .use((req, res, next) => {
       res.locals.isAuthenticated = req.session.isLoggedIn;
       res.locals.csrfToken = req.csrfToken();
+      if(req.session.isLoggedIn){
+         res.locals.userName = req.session.user.firstName;
+      }
       next();
    })
    .use('/', require('./shop'))
