@@ -11,6 +11,8 @@
  * IMPORTANT: Make sure to run "npm install" in your root before "npm start"
  *******************************************************************************/
 // Our initial setup (package requires, port number setup)
+require('dotenv').config();
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -18,10 +20,11 @@ const routes = require("./routes");
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoDbStore = require('connect-mongodb-session')(session);
+
 const csrf = require('csurf');
 const flash = require('connect-flash');
 const cors = require('cors'); // Place this with other requires (like 'path' and 'express')
-require('dotenv').config();
+
 const User = require('./models/shopModels/user');
 
 const corsOptions = {

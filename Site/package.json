@@ -11,6 +11,7 @@
     "test": "node test.js"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.4.4",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
     "connect-mongodb-session": "^2.4.1",
