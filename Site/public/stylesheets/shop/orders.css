@@ -12,7 +12,7 @@
 .orders__item {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   padding: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; 
 }
 
 .orders__products {
@@ -24,6 +24,29 @@
 .orders__products-item {
     margin: 0.5rem 0;
     padding: 0.5rem;
-    border: 1px solid #00695c;
-    color: #00695c;
+    border: 1px solid #00695c;    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: .5fr .25fr 1fr;
+}
+
+.orders__products-item h1 {
+  color: black;
+}
+
+.orders__products-item img {
+  max-width: 50px;
+  max-height: 2rem;
+}
+
+.orders__products-total {
+  border: 1px transparent solid;
+}
+
+@media (min-width: 500px) {
+  .orders { 
+    max-width: 500px;
+    margin: auto;
+  }
 }

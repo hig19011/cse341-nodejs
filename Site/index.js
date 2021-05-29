@@ -58,15 +58,29 @@ app.use(express.static(path.join(__dirname, 'public')))
    .use(csrfProtection)
    .use(flash())
    .use((req, res, next) => {
+      res.locals.isAuthenticated = req.session.isLoggedIn;
+      res.locals.csrfToken = req.csrfToken();
+      if(req.session.isLoggedIn && req.session.user){
+         res.locals.userName = req.session.user.firstName;
+      }
+      next();
+   })
+   .use((req, res, next) => {      
       if (!req.session.user) {
          return next();
       }
       User.findById(req.session.user._id)
          .then(user => {
+            //throw new Error('test');
+            if(!user) {
+               return next();
+            }
             req.user = user;
             next();
          })
-         .catch(err => console.log(err));      
+         .catch(err => {
+            next(new Error(err));
+         });      
    })
    .use('/', routes);
 

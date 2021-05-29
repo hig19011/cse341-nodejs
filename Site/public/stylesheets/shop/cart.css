@@ -23,6 +23,23 @@
   margin: auto;
 }
 
+.cart__item h3 {
+  margin-right: 1rem;
+  font-size: 1rem;
+  margin: auto;
+  border: 1px solid black;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.cart__item h3:hover {
+   background-color: #01BAEF;
+}
+
+.cart__item h3:active {
+  background-color: #0B4F6C;
+}
+
 .cart__item form {
   margin: auto 0 auto auto;
   grid-column: 3/4;
@@ -37,7 +54,7 @@
 @media (min-width: 768px) {
   .cart__item {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;    
+    grid-template-columns: 1fr 1fr 1fr .333fr .333fr 1fr 1fr;    
     grid-template-rows: 1fr;
   }
 
