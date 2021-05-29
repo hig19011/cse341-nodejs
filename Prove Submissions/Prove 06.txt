@@ -3,16 +3,34 @@ Please answer the questions in this text file and submit it to I-Learn.
 
 1. Copy and paste the URL for your web application (e.g., Heroku):
   https://cse341-gh-site.herokuapp.com/
-  
+
 2. Copy and paste the URL for your source code repository (e.g., GitHub):
+  https://github.com/hig19011/cse341-nodejs
 
 3. Briefly list and describe the elements of the application that are functioning. 
+  The Shop page displays Products with working Add to Cart button.  
+  The Products page display Products with working Details and Add to Cart button.
+  The Product Details page shows all details about a product and has working Add to Cart button
+  The Cart page display items in the cart for a user and allows the placement of an order.
+  The Order page display order made by a user.
+  The Add/Edit Product page allows creating or altering of new products into the database, including the user who created them.
+  The Admin Products page display all products with working Edit and Delete buttons.  
+  The Signup page allow a user to register with the site.
+  The Login page allows a user to login to the site.
+  The Logout button will log a user out of the site.
+  The User can reset password.
+  The product admin pages are restricted by user.
+  The forms and end points have validation and sanitation.
+  The site has error handling with a custom 500 page.
 
 4. Briefly describe any pieces of the assignment that are not yet working correctly.
+  None, all pieces of the assignment are working.
 
 5. Briefly describe the "coolest" thing you learned while completing this assignment.
+  The password reset was interesting.  It was new territory for me and I can see future applications for it.
 
 6. If you could change this assignment to be more effective or helpful, what would you change?
+  More specifics for the week would have been helpful.  The instruction were to do a couple items and finish up the site.  The project documents make assumptions about requirements and was lack specifics, which is frustrating.
 
 7. Please select the category you feel best describes your assignment:
    1 - Some attempt was made
@@ -20,5 +38,7 @@ Please answer the questions in this text file and submit it to I-Learn.
    3 - Slightly deficient, but still mostly adequate
    4 - Meets requirements
    5 - Shows creativity and excels above and beyond requirements
+    Category 5
 
-8. Provide a brief justification (1-2 sentences) for selecting that category
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+  I believe that I met the 100% requirements for all seven categories.

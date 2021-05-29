@@ -34,13 +34,29 @@ exports.getProduct = (req, res, next) => {
 exports.getIndex = (req, res, next) => {
   Product.find()
     .then((products) => {
+      let miniList = getRandom(products, 3)
+
       res.render('pages/shop/shop/index', {
-        prods: products,
+        prods: miniList,
         pageTitle: 'Home',
         path: '/'
       });
     });
 };
+
+function getRandom(arr, n) {
+  var result = new Array(n),
+      len = arr.length,
+      taken = new Array(len);
+  if (n > len)
+      throw new RangeError("getRandom: more elements taken than available");
+  while (n--) {
+      var x = Math.floor(Math.random() * len);
+      result[n] = arr[x in taken ? taken[x] : x];
+      taken[x] = --len in taken ? taken[len] : len;
+  }
+  return result;
+}
 
 exports.getCart = (req, res, next) => {
   req.user
