@@ -1,0 +1,46 @@
+.pr08-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pr08-list li {
+  padding: 16px;
+  margin: 16px;
+  box-shadow: 3px 3px 5px 5px lightgray;
+
+}
+
+.pr08-list .price {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.pr08-list img {
+  max-width: 330px;
+}
+
+
+.pagination {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.pagination a {
+  text-decoration: none;
+  color: green;
+  padding: 0.5rem;
+  border: 1px solid green;
+  margin: 0 1rem;
+}
+
+.pagination a:hover,
+.pagination a:active {
+  background: green;
+  color: white;
+}
+
+.pagination a.active {
+  background: green;
+  color: white;
+}

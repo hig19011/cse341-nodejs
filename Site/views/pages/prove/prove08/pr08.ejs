@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../../../includes/header.ejs %>
+  <link rel="stylesheet" href="/stylesheets/prove/pr08/main.css">
+</head>
+
+<body>
+  <% include ../../../includes/nav.ejs %>
+<div class="jumbotron text-center">
+  <div class="container">
+    <h1><%= title %></h1>
+    <p>This is the placeholder for Team Activity 03</p>
+  </div>
+</div>
+<div class="container">
+  <form action="/prove/pr08/" method="POST">
+    <label for="keyword">Search</label>
+    <input type="text" id="keyword" name="keyword" <% if(keyword != undefined) { %> value="<%=keyword%>" <% } %> >
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <button type="submit">Filter</button>
+  </form>
+  <ul class="pr08-list">
+    <% if(data.length > 0) { %>
+    
+      <% for(let d of data) { %> 
+        <li>
+          <h2><%= d.name %></h2>
+          <img src="<%= d.imageUrl %>" alt="<%= d.name %>">
+          <p class="price">$<%= d.price %></p>
+          <p>Description: <%= d.description %></p>
+          <span>Tags: <%= d.tags.join(', ') %></span>
+
+        </li>  
+      <% }%>      
+    <% } else { %>
+      <p>No matches found.</p>
+    <% }%>
+  </ul>
+  <section class="pagination">
+    <!-- <a href='/prove/pr08/?page=1<% if(keyword != undefined) { %>&keyword=<%=keyword%><% } %>'>1</a>
+    <a href='/prove/pr08/?page=2<% if(keyword != undefined) { %>&keyword=<%=keyword%><% } %>'>2</a> -->
+
+    <% if(currentPage !== 1 && previousPage !== 1) { %> 
+      <a href='/prove/pr08/?page=1<% if(keyword != undefined) { %>&keyword=<%=keyword%><% } %>'>First</a>
+    <% } %>
+
+    <% if(hasPreviousPage) { %> 
+      <a href='/prove/pr08/?page=<%= previousPage %><% if(keyword != undefined) { %>&keyword=<%=keyword%><% } %>'><%= previousPage %></a>
+    <% } %>
+    <a href='/prove/pr08/?page=<%= currentPage %><% if(keyword != undefined) { %>&keyword=<%=keyword%><% } %>' class="active"><%= currentPage %></a>
+    <% if(hasNextPage) { %> 
+      <a href='/prove/pr08/?page=<%= nextPage %><% if(keyword != undefined) { %>&keyword=<%=keyword%><% } %>'><%= nextPage %></a>
+    <% } %>
+    <% if(currentPage !== lastPage && nextPage !== lastPage && lastPage !== 0) { %> 
+      <a href='/prove/pr08/?page=<%= lastPage %><% if(keyword != undefined) { %>&keyword=<%=keyword%><% } %>'>Last</a>
+    <% } %>
+
+  </section>
+</div>
+
+
+</body>
+</html>
