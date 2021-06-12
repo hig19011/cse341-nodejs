@@ -10,14 +10,14 @@ exports.getSearchProducts = async (req, res, next) => {
 };
 
 exports.postSearchProducts = async (req, res, next) => {
-  const page = +req.query.page || 1;
+  const page = + req.query.page || 1;
   
   var data = await getListAsync(); 
   buildView(data, req.body.keyword, page, res);
 };
 
 buildView = (data, keyword, page, res) => {
-  if(keyword != undefined) {
+  if(keyword != undefined && keyword !== "") {
     data = data.filter(d => d.tags.includes(keyword));
   }
   

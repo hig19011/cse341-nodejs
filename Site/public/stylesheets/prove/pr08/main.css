@@ -29,7 +29,7 @@
 .pagination a {
   text-decoration: none;
   color: green;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   border: 1px solid green;
   margin: 0 1rem;
 }
@@ -43,4 +43,15 @@
 .pagination a.active {
   background: green;
   color: white;
+}
+
+.flexout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
 }

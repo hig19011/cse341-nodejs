@@ -1,0 +1,35 @@
+After completing the assignment, be sure to push to Github and Heroku.
+Please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application (e.g., Heroku):
+  https://cse341-gh-site.herokuapp.com/
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+  https://github.com/hig19011/cse341-nodejs
+
+3. Briefly list and describe the elements of the application that are functioning.
+  The site pulls json from an API and Displays it in the web page.
+  The site will filter based on keywords, kept from the Team Activity 3
+  The site will paginate over the results.
+  The pagination and filter work together to allow pagination over the filtered contents.
+  The pagination is found at the top and bottom of the page.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+  All pieces are working.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+  It wasn't particularly interesting, but I did like how almost all the calculations and logic were done in the controller keeping most of the logic out of the view.
+
+6. If you could change this assignment to be more effective or helpful, what would you change?
+  It was a straight forward assignment.  We implemented pagination, I don't think that I would anything.
+
+7. Please select the category you feel best describes your assignment:
+   1 - Some attempt was made
+   2 - Developing, but significantly deficient
+   3 - Slightly deficient, but still mostly adequate
+   4 - Meets requirements
+   5 - Shows creativity and excels above and beyond requirements
+    Category 5
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+  My submission is in an MVC pattern and it show the First, Last, Previous (numbered), Next (Number) and Current options, where applicable.  This covers the Above and Beyond requirements.
