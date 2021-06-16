@@ -7,11 +7,11 @@ exports.getPokemon = async (req, res, next) => {
 
   var data = await Pokemon.getPokemon(10*(page-1), ITEMS_PER_PAGE); 
 
-  buildView(data, req.query.keyword, page, res);
+  buildPokemonView(data, req.query.keyword, page, res);
 };
 
 
-buildView = (data, keyword, page, res) => {
+buildPokemonView = (data, keyword, page, res) => {
   
   let totalItems = data.count;
   const skip = (page-1) * ITEMS_PER_PAGE;
