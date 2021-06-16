@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../../../includes/header.ejs %>
+  <link rel="stylesheet" href="/stylesheets/prove/pr09/main.css">
+</head>
+
+<body>
+  <% include ../../../includes/nav.ejs %>
+<div class="jumbotron text-center">
+  <div class="container">
+    <h1><%= title %></h1>
+    <p>This page lets you paginate through the different types of Pokemon.</p>
+  </div>
+</div>
+<h1 class="center">Comprehensive Pokemon Index</h1>
+<div class="center">  
+    <% include paginate.ejs %>
+  </div>
+  <ul class="pr09-list">
+    <% if(data.length > 0) { %>
+    
+      <% for(let d of data) { %> 
+        <li>
+          <span><%= d.name %></span>
+        </li>  
+      <% }%>      
+    <% } else { %>
+      <p>No matches found.</p>
+    <% }%>
+  </ul>
+  <div class="center">
+    <% include paginate.ejs %>
+  </div>
+</div>
+
+
+</body>
+</html>

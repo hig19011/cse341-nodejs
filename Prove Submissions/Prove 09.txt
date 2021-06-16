@@ -1,0 +1,33 @@
+After completing the assignment, be sure to push to Github and Heroku.
+Please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application (e.g., Heroku):
+  https://cse341-gh-site.herokuapp.com/
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+  https://github.com/hig19011/cse341-nodejs
+  
+3. Briefly list and describe the elements of the application that are functioning.
+  The website pulls data from pokeapi in a using an offset and limit.
+  It uses the data to build a paginated web page listing the pokemon 10 at a time.
+  The pagination has First, Last, Next (numeric), Previous (numeric) and Current (numeric) fields displayed when appropriate.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+  All pieces are working.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+  The "fetch" api via the "node-fetch" library was so much simpler to use than the nodejs "http" method.  Additionally, it followed the async/await pattern which prefer.
+
+6. If you could change this assignment to be more effective or helpful, what would you change?
+  It was almost a rehash of the prior weeks assignment.  In that respect it didn't hold much value.
+
+7. Please select the category you feel best describes your assignment:
+   1 - Some attempt was made
+   2 - Developing, but significantly deficient
+   3 - Slightly deficient, but still mostly adequate
+   4 - Meets requirements
+   5 - Shows creativity and excels above and beyond requirements
+    Category 5.
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+  My site is structured in an MVC format. It includes all the First, Previous, Current, Next and Last links as needed.

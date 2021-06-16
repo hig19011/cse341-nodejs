@@ -1,0 +1,48 @@
+.pr09-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+.pr09-list li {
+  padding: 8px;
+  margin: 16px;
+  box-shadow: 3px 3px 5px 5px lightsalmon;
+}
+
+
+.pagination {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.pagination a {
+  text-decoration: none;
+  color: red;
+  padding: 0.5rem 1rem;
+  border: 1px solid red;
+  margin: 0 1rem;
+}
+
+.pagination a:hover,
+.pagination a:active {
+  background: red;
+  color: white;
+}
+
+.pagination a.active {
+  background: red;
+  color: white;
+}
+
+.flexout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}

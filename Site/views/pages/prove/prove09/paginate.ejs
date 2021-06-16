@@ -1,0 +1,18 @@
+<section class="pagination">
+  
+  <% if(currentPage !== 1 && previousPage !== 1) { %> 
+    <a href='/prove/pr09/?page=1'>First</a>
+  <% } %>
+ 
+  <% if(hasPreviousPage) { %> 
+    <a href='/prove/pr09/?page=<%= previousPage %>'><%= previousPage %></a>
+  <% } %>
+  <a href='/prove/pr09/?page=<%= currentPage %>' class="active"><%= currentPage %></a>
+  <% if(hasNextPage) { %> 
+    <a href='/prove/pr09/?page=<%= nextPage %>'><%= nextPage %></a>
+  <% } %>
+  <% if(currentPage !== lastPage && nextPage !== lastPage && lastPage !== 0) { %> 
+    <a href='/prove/pr09/?page=<%= lastPage %>'>Last</a>
+  <% } %>
+
+</section>
