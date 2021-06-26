@@ -41,3 +41,11 @@
   width: 5rem;
   height: 5rem;
 }
+
+.error {
+  color: red;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,33 @@
+After completing the assignment, be sure to push to Github and Heroku.
+Please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application (e.g., Heroku):
+  https://cse341-gh-site.herokuapp.com/
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+  https://github.com/hig19011/cse341-nodejs
+
+3. Briefly list and describe the elements of the application that are functioning.
+  It loops through the data and displays it on the screen.
+  It has an endpoint that allow submission of new Avengers and prevents duplicates
+  The client side interface accept new data via text input and submits it the the endpoint for new Avengers.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+  None, all pieces are working.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+  It was nice to have the data go round trip without refreshing the page.  Page loading is fine when changing topics, but a self building page has a better feel to the end user.
+
+6. If you could change this assignment to be more effective or helpful, what would you change?
+  Have some error handling as an above and beyond requirements.  APIs fail all of the time and dealing with it in a useful way for the user would be good practice.
+
+7. Please select the category you feel best describes your assignment:
+   1 - Some attempt was made
+   2 - Developing, but significantly deficient
+   3 - Slightly deficient, but still mostly adequate
+   4 - Meets requirements
+   5 - Shows creativity and excels above and beyond requirements
+    Category 5
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+  I added extra style to the page, allowed additional inputs on the insert, and gave some error message back when there were issues preventing the insert such as Duplicate Entries.

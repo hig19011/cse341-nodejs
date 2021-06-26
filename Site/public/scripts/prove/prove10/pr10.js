@@ -1,5 +1,4 @@
 
-
 const getNames = () => {
   const list = document.getElementById('pr10-list');
   
@@ -42,38 +41,51 @@ addListField = (listItem, value, isLabel=false) => {
 }
 
 
-const addName = () => {
+const addName = async () => {
   const inputName =  document.getElementById('newName');
   const newName = inputName.value;
   const inputSoloMovies =  document.getElementById('soloMovies');
   const soloMovies = inputSoloMovies.value;
   const inputFavoriteColor =  document.getElementById('favoriteColor');
   const favoriteColor = inputFavoriteColor.value;
+  const errorMessage = document.getElementById('errorMessage');
 
   var token = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
 
   if(newName === "") {
+    errorMessage.innerText = "Avenger name is required.";
+    errorMessage.classList.remove("hidden");
     return;
   }
 
 
-  fetch('/prove/pr10/addName', {
+  var res = await fetch('/prove/pr10/addName', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'CSRF-Token': token },
     body: JSON.stringify({ newName, soloMovies, favoriteColor })
-  })
-    .then(res => {
-      inputName.value = '';
-      inputSoloMovies.value = '';
-      inputFavoriteColor.value = '';
-      getNames();
-    })
-    .catch(err => {
-      inputName.value = '';
-      inputSoloMovies.value = '';
-      inputFavoriteColor.value = '';
-      console.log(err);
-    });
+  }).catch(err => {
+    inputName.value = '';
+    inputSoloMovies.value = '';
+    inputFavoriteColor.value = '';   
+    errorMessage.innerText = 'Error: Unable to add Avenger';
+    errorMessage.classList.remove("hidden");
+    console.log(err);
+  });
+    
+  if(res.status>=400){   
+    const message = await res.text();
+    errorMessage.innerText = message;
+    errorMessage.classList.remove("hidden");
+    return;
+  }
+
+  inputName.value = '';
+  inputSoloMovies.value = '';
+  inputFavoriteColor.value = '';
+  errorMessage.innerText = '';
+  errorMessage.classList.add("hidden");
+  getNames();
+  
 }
 
 

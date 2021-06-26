@@ -22,16 +22,15 @@ router.post('/addName', (req, res, next) => {
 
     var hasName = baseData.avengers.some(n => n.name.toLowerCase() === name.toLowerCase());
     if(hasName){
-      res.sendStatus(200);    
+      res.status(400).send("Duplicate Avenger");    
       return;  
     }
-
 
     baseData.avengers.push({name: name, soloMovies: soloMovies, favoriteColor: favoriteColor});
     res.sendStatus(200);    
   }
   else {
-    res.sendStatus(400);
+    res.status(400).send("Avenger name is required.");    
   }
 });
 
