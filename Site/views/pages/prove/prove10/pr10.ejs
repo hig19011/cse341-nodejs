@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../../../includes/header.ejs %>
+  <link rel="stylesheet" href="/stylesheets/prove/pr10/main.css">
+</head>
+
+<body>
+  <% include ../../../includes/nav.ejs %>
+<div class="jumbotron text-center">
+  <div class="container">
+    <h1><%= title %></h1>
+    <p>This page lets you use a local REST API service to edit the Avengers.</p>
+  </div>
+</div>
+
+<main>
+  <h1 class="center">Avengers</h1>
+  <ul id="pr10-list">
+  </ul>
+  <div>
+    <h3>New Avenger</h3>
+    <label for="newName">Name</label>
+    <input type="text" id="newName">
+    <label for="soloMovies">Solo Movies</label>
+    <input type="number" id="soloMovies">
+    <label for="favoriteColor">Favorite Color</label>
+    <input type="text" id="favoriteColor">
+    <button id="submitName" onclick="addName()">Add Avenger</button>
+  </div>
+</main>
+<script src="../scripts/prove/prove10/pr10.js"></script>
+
+
+</body>
+</html>

@@ -20,6 +20,7 @@ const routes = require("./routes");
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoDbStore = require('connect-mongodb-session')(session);
+var cookieParser = require('cookie-parser');
 
 const csrf = require('csurf');
 const flash = require('connect-flash');
@@ -46,15 +47,17 @@ const MONGODB_URL = process.env.MONGODB_URL;
 
 const app = express();
 const store = new MongoDbStore({ uri: MONGODB_URL, collections: 'sessions' });
-const csrfProtection = csrf();
+const csrfProtection = csrf({cookie:true });
 
 app.use(express.static(path.join(__dirname, 'public')))
    .set('views', path.join(__dirname, 'views'))
    .set('view engine', 'ejs')
    .use(cors(corsOptions))
    .use(bodyParser({ extended: false })) // For parsing the body of a POST
+   .use(bodyParser.json())
    //.use(express.json({extended:false}))
    .use(session({ secret: 'Blue Licorice', resave: false, saveUninitialized: false, store: store }))
+   .use(cookieParser())
    .use(csrfProtection)
    .use(flash())
    .use((req, res, next) => {

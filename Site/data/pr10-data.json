@@ -1,0 +1,22 @@
+{
+  "avengers": [
+      {
+          "name": "Tony Stark", "soloMovies": 3, "favoriteColor": "Red"
+      },
+      {
+          "name": "Steve Rogers", "soloMovies": 2, "favoriteColor": "Blue"
+      },
+      {
+          "name": "Thor Odinson", "soloMovies": 2, "favoriteColor": "Yellow"
+      },
+      {
+          "name": "Bruce Banner", "soloMovies": 1, "favoriteColor": "Green"
+      },
+      {
+          "name": "Natasha Romanova", "soloMovies": 1, "favoriteColor": "Black"
+      },
+      {
+          "name": "Clint Barton", "soloMovies": 0, "favoriteColor": "Unknown"
+      }
+  ]
+}
