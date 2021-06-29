@@ -32,7 +32,7 @@ const corsOptions = {
    origin: "https://cse341-gh-site.herokuapp.com/",
    optionsSuccessStatus: 200
 };
-
+ 
 const options = {
    useUnifiedTopology: true,
    useNewUrlParser: true,

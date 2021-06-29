@@ -5,9 +5,9 @@ const getNames = () => {
   while(list.firstChild) {
     list.removeChild(list.firstChild);
   }
-
+ 
   fetch('/prove/pr10/fetchAll')
-    .then(res => res.json())
+    .then(res => res.json()) 
     .then(data => {
 
       const header = document.createElement('li');

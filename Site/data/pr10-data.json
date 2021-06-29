@@ -1,5 +1,5 @@
 {
-  "avengers": [
+  "avengers" : [
       {
           "name": "Tony Stark", "soloMovies": 3, "favoriteColor": "Red"
       },
@@ -17,6 +17,6 @@
       },
       {
           "name": "Clint Barton", "soloMovies": 0, "favoriteColor": "Unknown"
-      }
+      } 
   ]
-}
+} 

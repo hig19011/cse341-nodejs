@@ -28,7 +28,7 @@ router.post('/addName', (req, res, next) => {
 
     baseData.avengers.push({name: name, soloMovies: soloMovies, favoriteColor: favoriteColor});
     res.sendStatus(200);    
-  }
+  } 
   else {
     res.status(400).send("Avenger name is required.");    
   }

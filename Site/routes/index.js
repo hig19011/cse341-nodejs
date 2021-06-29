@@ -14,5 +14,5 @@ routes.use('/team', team)
     // 404 page
     res.render('pages/404', { title: '404 - Page Not Found', path: req.url })
   });
-
-module.exports = routes;
+ 
+module.exports = routes; 

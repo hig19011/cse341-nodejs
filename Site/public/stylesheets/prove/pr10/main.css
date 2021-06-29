@@ -8,13 +8,13 @@ ul {
   padding: 0;
   
 }
-
+ 
 ul li {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 8px;
   
-}
+} 
 
 
 .field-label {

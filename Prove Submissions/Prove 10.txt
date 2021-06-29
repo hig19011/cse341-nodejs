@@ -31,3 +31,4 @@ Please answer the questions in this text file and submit it to I-Learn.
 
 8. Provide a brief justification (1-2 sentences) for selecting that category.
   I added extra style to the page, allowed additional inputs on the insert, and gave some error message back when there were issues preventing the insert such as Duplicate Entries.
+  
