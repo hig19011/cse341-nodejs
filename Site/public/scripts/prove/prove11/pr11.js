@@ -1,11 +1,13 @@
 const socket = io();
 
 const getNames = () => { 
-  socket.emit('fetchAll');
+  socket.emit('fetchAll', (data)=> buildAvengerList(data));
 }
 
 socket.on('avengers', response => {
+  if(response.action === "updatedList") {
     buildAvengerList(response.data);
+  }
 });
 
 buildAvengerList = (data) => {

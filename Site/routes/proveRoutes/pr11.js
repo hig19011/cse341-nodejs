@@ -14,8 +14,8 @@ router.get('/', (req, res, next) => {
 addName = (data, callback) => {
   var hasName = baseData.avengers.some(n => n.name.toLowerCase() === data.newName.toLowerCase());
   if (hasName) {
-    callback("Duplicate Avenger"); 
-    return;   
+    callback("Duplicate Avenger");
+    return;
   }
 
   baseData.avengers.push({ name: data.newName, soloMovies: data.soloMovies, favoriteColor: data.favoriteColor });
@@ -23,10 +23,15 @@ addName = (data, callback) => {
   callback("");
 }
 
+updateList = (callback) => {
+  //io.getIO().emit('avengers', { action: 'updatedList', data: baseData })
+  callback(baseData);
+}
+
 module.exports = {
   router: router,
-  ioHandlers: (io, socket) =>{
-    socket.on('fetchAll',()=>io.emit('avengers', { action: 'updatedList', data: baseData }));
+  ioHandlers: (io, socket) => {
+    socket.on('fetchAll', (callback) => updateList(callback));
     socket.on('addName', (data, callback) => addName(data, callback));
   }
 };
