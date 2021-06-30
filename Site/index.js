@@ -21,6 +21,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoDbStore = require('connect-mongodb-session')(session);
 var cookieParser = require('cookie-parser');
+const ioHandlers = require('./routes/proveRoutes/pr11').ioHandlers;
 
 const csrf = require('csurf');
 const flash = require('connect-flash');
@@ -91,7 +92,15 @@ mongoose
    .connect(MONGODB_URL, options)
    .then(result => {
       console.log("Connected:");
-      app.listen(PORT, () => console.log(`Listening on ${PORT}`));
+      const server = app.listen(PORT, () => console.log(`Listening on ${PORT}`));
+      const io = require('./util/socket').init(server);
+      io.on('connection', socket=>{
+         console.log('Client connected');
+         ioHandlers(io,socket);
+         socket.on('disconnect', () => {
+            console.log('Client disconnected');
+         });
+      });
    })
    .catch(err => {
       console.log(err);
