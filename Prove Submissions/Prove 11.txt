@@ -1,0 +1,33 @@
+After completing the assignment, be sure to push to Github and Heroku.
+Please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application (e.g., Heroku):
+  https://cse341-gh-site.herokuapp.com/
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+  https://github.com/hig19011/cse341-nodejs
+
+3. Briefly list and describe the elements of the application that are functioning.
+  The page requests the initial list of Avengers after loading.
+  It submits a new name and other info with a check for duplicates.
+  It notifies clients when a name is updated.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+  None, all pieces are working.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+  The basics of socket.io were fun to learn.  It is cool to be able to push data to the client.
+
+6. If you could change this assignment to be more effective or helpful, what would you change?
+   GraphQL is useful in certain niche cases, but is overkill for most websites, particularly the standard e-commerce and blogs site that are so common.  In most cases, I wouldn't recommend it over a standard REST API.  I would reduce the time spend on learning this topic for other relevant technologies.
+
+7. Please select the category you feel best describes your assignment:
+   1 - Some attempt was made
+   2 - Developing, but significantly deficient
+   3 - Slightly deficient, but still mostly adequate
+   4 - Meets requirements
+   5 - Shows creativity and excels above and beyond requirements
+    Category 5
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+  My site has extra styling, additional fields and easy to read and use socket.io implementations.
