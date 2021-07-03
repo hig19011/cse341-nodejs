@@ -1,0 +1,37 @@
+After completing the assignment, be sure to push to Github and Heroku.
+Please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application (e.g., Heroku):
+  https://cs341-gh-prove12.herokuapp.com/
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+  https://github.com/hig19011/cse341-nodejs
+
+3. Briefly list and describe the elements of the application that are functioning.
+  User can login to chat, duplicate names are blocked.
+  Admin user notifies existing users when a new user joins.
+  *User auto logs out of chat when they leave the page.
+  *Admin user notifies existing users when a user leaves the chat.
+  User can send and receive messages
+  *Page auto scrolls to new message when it is received.
+  Extra functionality is marked with a *.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+  None, all pieces are working.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+  Finding a way to work around the need for both http and websocket communications while tracking users.
+
+6. If you could change this assignment to be more effective or helpful, what would you change?
+  This exercise is almost a repeat of last weeks.  I would suggest keeping Prove 12 and changing Prove 11 to something more useful.
+
+7. Please select the category you feel best describes your assignment:
+   1 - Some attempt was made
+   2 - Developing, but significantly deficient
+   3 - Slightly deficient, but still mostly adequate
+   4 - Meets requirements
+   5 - Shows creativity and excels above and beyond requirements
+    Category 5
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+  I met all of the Above and Beyond requirements.  I added the extra features listed with a * in Question 3.
