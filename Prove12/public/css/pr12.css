@@ -38,6 +38,13 @@ ul.chat li.message button {
     padding: 0.5rem;
 }
 
+.input button {
+    vertical-align: top;
+    padding: 1.25rem;
+    font-size: large;
+    font-weight: bold;
+}
+
 .input textarea {
     border: solid #000000 0.5rem;
     width: 75%;

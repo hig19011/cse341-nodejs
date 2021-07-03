@@ -1,5 +1,6 @@
 const socket = io('/') // This means your client will always be connected to your server, locally or on Heroku.
 
+const container = document.getElementById('container')
 const chatBox = document.getElementById('chatBox')
 const messageEl = document.getElementById('message')
 const user = document.getElementById('user')
@@ -54,6 +55,7 @@ const addMessage = (data = {}, user = false) => {
     }
 
     chatBox.appendChild(li);
+    container.scrollTop = container.scrollHeight;
 }
 
 

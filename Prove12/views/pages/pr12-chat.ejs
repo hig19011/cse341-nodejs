@@ -4,7 +4,7 @@
 
 <body>
     <% include ../includes/nav.ejs %>
-    <div class="container">
+    <div class="container" id="container">
         <h1>Live chat:</h1>
         <ul id="chatBox" class="chat">
         </ul>
@@ -12,8 +12,10 @@
     <% if (user) { %>
     <div class="input">
         <p class="displayname"><%= user %></p>
-        <textarea name="message" id="message"></textarea>
-        <button onclick="postMessage()">Send</button>
+        <div>
+            <textarea name="message" id="message"></textarea>
+            <button onclick="postMessage()">Send</button>
+        </div>
         <input type="hidden" value="<%= user %>" name="user" id="user">
     </div>
     <% } else { %>
