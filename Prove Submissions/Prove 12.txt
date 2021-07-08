@@ -13,7 +13,7 @@ Please answer the questions in this text file and submit it to I-Learn.
   *User auto logs out of chat when they leave the page.
   *Admin user notifies existing users when a user leaves the chat.
   User can send and receive messages
-  *Page auto scrolls to new message when it is received.
+  *Page auto scrolls to new message when it is received and there are enough messages to scroll through.
   Extra functionality is marked with a *.
 
 4. Briefly describe any pieces of the assignment that are not yet working correctly.
