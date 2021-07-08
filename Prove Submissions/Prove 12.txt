@@ -10,7 +10,7 @@ Please answer the questions in this text file and submit it to I-Learn.
 3. Briefly list and describe the elements of the application that are functioning.
   User can login to chat, duplicate names are blocked.
   Admin user notifies existing users when a new user joins.
-  *User auto logs out of chat when they leave the page.
+  *User auto logs out of chat when they leave the page, so they can log back in again.
   *Admin user notifies existing users when a user leaves the chat.
   User can send and receive messages
   *Page auto scrolls to new message when it is received and there are enough messages to scroll through.
